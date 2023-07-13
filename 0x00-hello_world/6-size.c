@@ -1,12 +1,11 @@
-#include <stdio.h> 
- 
-/** 
- * main - Entry point 
- * Description: A C program that prints the sizes of different data 
- * types using printf and sizeof 
- * Return: Always returns 0 (Success) 
-*/ 
-int main(void) 
+#include <stdio.h>
+/**
+ * main - Entry point
+ * Description: A C program that prints the sizes of different dat
+ * types using printf and sizeof
+ * Return: Always returns 0 (Success)
+*/
+int main(void)
 {
 printf("Size of a char: %d byte(s)\n", sizeof(char));
 printf("Size of an int: %d byte(s)\n", sizeof(int));
