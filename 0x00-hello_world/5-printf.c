@@ -1,14 +1,14 @@
-#include <stdio.h>
+#include <stdio.>
 /**
- *main -Entry
+ * main - Entry point
  *
- * desriprion: a c that prints
+ * Discriprion: A c progrm that prints
  *
- * Return Always 0 (success)
+ * Return: Always 0 (success)
 */
 
 int main(void)
 {
-	printf("with proper grammar, but the outcome is a piece of art,");
+	printf("with proper grammar, but the outcome is a piece of art,\n");
 	return (0);
 }
