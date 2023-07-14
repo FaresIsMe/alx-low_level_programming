@@ -6,15 +6,20 @@
 */
 int main(void)
 {
-	int i = '0';
+	int i;
+	int k;
 
 	for (i = '0'; i <= '9'; i++)
 	{
-		putchar(i);
-		if (i <= '8')
+		for (k = i + 1; k <= '9'; k++)
 		{
-			putchar(',');
-			putchar(' ');
+			putchar (i);
+			putchar(k);
+			if (i != '8' || k != '9')
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 	}
 	putchar('\n');
