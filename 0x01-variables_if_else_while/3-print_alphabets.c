@@ -1,17 +1,22 @@
 #include <stdio.h>
 /**
- *main-Entyy
- *Decription: idk
- *Return: Always 0
+ *main-Entry
+ *description:idk
+ *Return: always 0
 */
 int main(void)
 {
-	int c;
+	char c;
 
 	for (c = 'a'; c <= 'z'; ++c)
+	{
+		putchar(c);
+	}
+	for (c = 'A'; c <= 'Z'; ++c)
 	{
 		putchar(c);
 	}
 	putchar('\n');
 	return (0);
 }
+
