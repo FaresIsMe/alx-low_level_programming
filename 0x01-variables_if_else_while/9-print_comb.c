@@ -6,17 +6,17 @@
 */
 int main(void)
 {
-	int i = 0;
-	int v = 0xa;
+	int i = '0';
 
 	for (i = '0'; i <= '9'; i++)
 	{
 		putchar(i);
+		if (i <= '8')
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
-	for (v = 'a'; v <= 'f'; ++v)
-	{
-		putchar(v);
-	}
-	printf("\n");
+	putchar('\n');
 	return (0);
 }
