@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlip.h>
+#include <stdlib.h>
 /**
  *_abs -checks
  *@n: the c
