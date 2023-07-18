@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *print - yes
+ *print_alphabet - it does things
  *description: from a to z
  *Return : 0
 */
