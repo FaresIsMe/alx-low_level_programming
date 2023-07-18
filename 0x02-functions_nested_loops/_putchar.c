@@ -1,5 +1,6 @@
 #include <unistd.h>
 #include "main.h"
+#include <stdio.h>
 /**
  *_putchar - writes the char to c
  *description:IDK
@@ -8,5 +9,6 @@
 */
 int _putchar(char c)
 {
-return (write(1, &c, 1));
+//return (write(1, &c, 1));
+return (printf("%d", c);
 }
