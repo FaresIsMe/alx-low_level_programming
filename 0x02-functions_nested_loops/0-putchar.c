@@ -1,11 +1,17 @@
-#include <stdio.h>
+#include "main.h"
 /**
- *  * main - Entry
- *   * Desciption:whatever
- *    * Return: Always 0 (Success)
+ * main -entry
+ * description:idk
+ * Return: 0
 */
+
 int main(void)
 {
-	printf("_putchar\n");
+	char name[] = "_putchar";
+
+	for (int i = 0; i < 9; i++)
+	{
+		_putchar(name[i]);
+	}
 	return (0);
 }
