@@ -16,7 +16,7 @@ if (n > 0)
 	{
 		for (i = 0; i < k; i++)
 		{
-			_putchar('_');
+			_putchar(' ');
 		}
 		_putchar('\\');
 		_putchar('\n');
