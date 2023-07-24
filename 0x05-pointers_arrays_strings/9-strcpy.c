@@ -3,10 +3,10 @@
 #include <stdio.h>
 
 /**
- *_strcpy - it copies strings 
+ *_strcpy - it copies strings
  *@dest: the copy
  *@src: the original string
- *Retuen: string copied
+ *Return: string copied
 */
 char *_strcpy(char *dest, char *src)
 {
@@ -16,7 +16,7 @@ char *_strcpy(char *dest, char *src)
 		L = strlen(src);
 		for (i = 0; i <= L ; i++)
 		{
-				dest[i] = src[i];
+			dest[i] = src[i];
 		}
-				return(src);
+			return (src);
 }
