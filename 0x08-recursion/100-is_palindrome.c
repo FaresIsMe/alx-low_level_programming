@@ -1,8 +1,7 @@
-#include "main.h"
 #include <string.h>
-#include <stdlib.h>
+#include "main.h"
 
-int palindrome_helper(char *s, int L, int);
+int is_palindrome_helper(char *s, int start, int end);
 /**
  * is_palindrome - lol
  * @s: idfk
@@ -10,27 +9,24 @@ int palindrome_helper(char *s, int L, int);
 */
 int is_palindrome(char *s)
 {
-	int L;
+	int len = strlen(s);
 
-	L = strlen(s) - 1;
-	return (palindrome_helper(s, L, 0));
+	if (len <= 1)
+		return (1);
+	return (is_palindrome_helper(s, 0, len - 1));
 }
 /**
- * palindrome_helper - hello
+ * is_palindrome_helper - hello
  * @s: string
- * @L: lol
- * @i: whatever
- * @to:lol
+ * @start: lol
+ * @end: whatever
  * Return: IDC
 */
-int palindrome_helper(char *s, int L, int i)
+int is_palindrome_helper(char *s, int start, int end)
 {
-	char *to = malloc((L + 1) * sizeof(char));
-	for (i = 0; s[i] != '\0'; i++, L--)
-	to[i] = s[L];
-	to[i] = '\0';
-	if (strcmp(to, s) == 0)
-	return (1);
-	else
-	return (0);
-} 
+	if (start >= end)
+		return (1);
+	if (s[start] != s[end])
+		return (0);
+	return (is_palindrome_helper(s, start + 1, end - 1));
+}
