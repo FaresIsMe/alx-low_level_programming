@@ -19,7 +19,16 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; i++)
 		{
 			if ((*argv[i] >= 48 && *argv[i] <= 57) || *argv[i] == '-')
-				sum = sum + atoi(argv[i]);
+			{
+
+				if (*argv[i] == '-')
+				{
+
+					sum = sum - atoi(argv[i]);
+				}
+				else
+					sum = sum + atoi(argv[i]);
+			}
 			else
 			{
 				printf("Error\n");
