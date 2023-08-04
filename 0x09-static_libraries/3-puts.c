@@ -1,18 +1,14 @@
 #include "main.h"
-#include <stdio.h>
+#include <string.h>
+
 /**
- *  * main - Entry point
- *   *
- *    * Return: Always 0 (Success)
- *     */
+ *_puts - some pointer
+ *@str: some pointer
+ * Return: the length of the string s
+*/
 void _puts(char *str)
 {
-	int i = 0;
-	while (str[i])
-	{
-		putchar(str[i]);
-		i++;
-	}
-	putchar('\n');
+	for (; *str != '\0'; str++)
+		_putchar(*str);
+	_putchar('\n');
 }
-
