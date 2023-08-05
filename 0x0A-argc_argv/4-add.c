@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  *main - entry
@@ -13,6 +14,8 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int sum = 0;
+	int j;
+	int L;
 
 	if (argc > 1)
 	{
@@ -20,14 +23,20 @@ int main(int argc, char *argv[])
 		{
 			if ((*argv[i] >= 48 && *argv[i] <= 57) || *argv[i] == '-')
 			{
-
-				if (*argv[i] == '-')
+				L = strlen(argv[i]);
+				for (j = 0; j < L; j++)
 				{
-
-					sum = sum - atoi(argv[i]);
+					if (argv[i][j] >= 48 && argv[i][j] <= 57)
+					{
+						continue;
+					}
+					else
+					{
+						printf("Error\n");
+						return (1);
+					}
 				}
-				else
-					sum = sum + atoi(argv[i]);
+				sum = sum + atoi(argv[i]);
 			}
 			else
 			{
