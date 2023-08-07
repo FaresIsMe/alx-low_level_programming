@@ -15,9 +15,6 @@ char *str_concat(char *s1, char *s2)
 	int L2 = 0;
 	int j;
 
-	if (s2 == NULL && s1 == NULL)
-	return (NULL);
-
 	if (s1 == NULL)
 	s1 = "";
 
@@ -33,7 +30,7 @@ char *str_concat(char *s1, char *s2)
 	if (L == 1 && L2 == 1)
 	return (NULL);
 
-	ptr = malloc(sizeof(char) * (L2 + L + 2));
+	ptr = malloc(sizeof(char) * (L2 + L + 1));
 
 	if (ptr == NULL)
 	return (NULL);
