@@ -34,7 +34,6 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 		{
-			// Allocate memory for the word
 			words[k] = malloc(sizeof(char) * (len - i + 1));
 			if (words[k] == NULL)
 			{
