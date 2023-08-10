@@ -1,26 +1,23 @@
-#include <stdlib.h>
 #include "main.h"
-#include <string.h>
+#include <stdlib.h>
 /**
- * _calloc - it's like malloc
- * @nmemb: the size of the dynamic array
- * @size: idk
- * Return: a pointer address
-*/
+ * _calloc - allocates memory for an array, initialized to 0
+ * @nmemb: number of elements
+ * @size: byte size of each element
+ *
+ * Return: void pointer to array space
+ */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *ptr;
-	unsigned int i;
+	char *p;
 
-	if (nmemb == 0 || size == 0)
-	return (NULL);
-
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
-	return (NULL);
-
-	for (i = 0; i < nmemb; i++)
-	ptr[i] = 0;
-
-	return (ptr);
+	if (!nmemb || !size)
+		return (NULL);
+	p = malloc(nmemb * size);
+	if (!p)
+		return (NULL);
+	nmemb *= size;
+	while (nmemb--)
+		p[nmemb] = 0;
+	return (p);
 }
