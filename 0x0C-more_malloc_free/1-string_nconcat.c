@@ -1,41 +1,38 @@
 #include <stdlib.h>
 #include "main.h"
 #include <string.h>
+
 /**
- * string_nconcat - it's like malloc
- * @n: the size of the dynamic array
- * @s1: idk
- * @s2: idk
- * Return: a pointer address
-*/
+ * string_nconcat - Concatenates two strings
+ * @s1: The first string
+ * @s2: The second string
+ * @n: The number of characters from s2 to concatenate
+ * Return: A pointer to the concatenated string
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	int L;
-	int i;
-	unsigned int j, L2;
+	size_t len_s1, len_s2, concat_len;
 
 	if (s1 == NULL)
-	s1 = "";
+		s1 = "";
 	if (s2 == NULL)
-	s2 = "";
+		s2 = "";
 
-	L = strlen(s1);
-	L2 = strlen(s2);
+	len_s1 = strlen(s1);
+	len_s2 = strlen(s2);
 
-	if (n >= L2)
-	n = L2;
+	if (n >= len_s2)
+		n = len_s2;
 
-	ptr = malloc(sizeof(char) * (L + n));
+	concat_len = len_s1 + n;
+
+	ptr = malloc((concat_len + 1) * sizeof(char));
 	if (ptr == NULL)
-	return (NULL);
+		return (NULL);
 
-	for (i = 0; i < L; i++)
-	ptr[i] = s1[i];
-
-	for (i = L, j = 0; j < n; i++, j++)
-	ptr[i] = s2[j];
-	ptr[i] = '\0';
+	strcpy(ptr, s1);
+	strncat(ptr, s2, n);
 
 	return (ptr);
 }
