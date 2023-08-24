@@ -2,14 +2,14 @@
 #include <stdio.h>
 /**
  * print_list - printing the list
- * @head: the list
+ * @h: the list
  * Return: The number of nodes
 */
 size_t print_list(const list_t *h)
 {
-   size_t i = 0;
+	size_t i = 0;
 
-	while(h)
+	while (h)
 	{
 		if (!h->str)
 		printf("[%d] (nil)\n", h->len);
@@ -18,5 +18,5 @@ size_t print_list(const list_t *h)
 		h = h->next;
 		i++;
 	}
-	return(i);
+	return (i);
 }
