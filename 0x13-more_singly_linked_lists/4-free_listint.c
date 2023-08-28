@@ -5,7 +5,7 @@
  * @head: whatever
  * return: nothing
 */
-void free_listint(list_t *head)
+void free_listint(listint_t *head)
 {
 	listint_t *temp;
 
@@ -13,7 +13,6 @@ void free_listint(list_t *head)
 	{
 		temp = head;
 		head = head->next;
-		free(temp->str);
 		free(temp);
 	}
 }
