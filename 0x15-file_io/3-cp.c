@@ -36,7 +36,7 @@ void copy_file(const char *file_from, const char *file_to)
 	if (fd_to == -1)
 	{
 		close(fd_from);
-		print_error_and_exit(99, "Error: Can't write to %s", fd_to);
+		print_error_and_exit(99, "Error: Can't write to %s", file_to);
 	}
 
 	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
@@ -46,7 +46,7 @@ void copy_file(const char *file_from, const char *file_to)
 		{
 			close(fd_from);
 			close(fd_to);
-			print_error_and_exit(99, "Error: Can't write to %s", fd_to);
+			print_error_and_exit(99, "Error: Can't write to %s", file_to);
 		}
 	}
 	if (bytes_read == -1)
@@ -57,9 +57,9 @@ void copy_file(const char *file_from, const char *file_to)
 	}
 
 	if (close(fd_from) == -1)
-		print_error_and_exit(100, "Error: Can't close file descriptors for %s", fd_from);
+		print_error_and_exit(100, "Error: Can't close file descriptors for %s", file_from);
 	if (close(fd_to) == -1)
-		print_error_and_exit(100, "Error: Can't close file descriptor for %s", fd_to);
+		print_error_and_exit(100, "Error: Can't close file descriptor for %s", file_to);
 }
 /**
  * main - entry
@@ -70,11 +70,14 @@ void copy_file(const char *file_from, const char *file_to)
 */
 int main(int ac, char *av[])
 {
+	const char *file_from;
+	const char *file_to;
+
 	if (ac != 3)
 	print_error_and_exit(97, "Usage: cp file_from file_to", '\0');
 
-	const char *file_from = av[1];
-	const char *file_to = av[2];
+	file_from = av[1];
+	file_to = av[2];
 
 	copy_file(file_from, file_to);
 
