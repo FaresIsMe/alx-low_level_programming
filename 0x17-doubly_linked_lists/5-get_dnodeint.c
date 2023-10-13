@@ -12,14 +12,12 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	dlistint_t *node = head;
 	unsigned int i = 0;
 
-	node = malloc(sizeof(dlistint_t));
-
-	while (i != index)
+	while (i != index && node)
 	{
-		head = head->next;
+		node = node->next;
 		i++;
 	}
-	node = head->next;
-	node->n = head->n;
-	return (node);
+	if (node && (i == index))
+		return (node);
+	return (NULL);
 }
